@@ -1,18 +1,15 @@
 <script>
+import AppOutNow from './main_components/AppOutNow.vue';
+
 export default {
-    data() {
-        return {
-
-        }
-    },
-    methods: {
-
-    },
+    components: {
+        AppOutNow,
+    }
 }
 </script>
 <template>
     <div>
-
+        <AppOutNow></AppOutNow>
     </div>
 </template>
 <style lang="scss">
