@@ -1,5 +1,11 @@
 <script>
+import App from './main_components/AppOutNow.vue';
+
 export default {
+    nome: "Main",
+    components: {
+        AppOutNow
+    },
     data() {
         return {
 

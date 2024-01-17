@@ -1,14 +1,16 @@
 <script >
-export default {
+import Main from './components/Main.vue';
 
+export default {
+    components: {
+        Main,
+    }
 }
 </script>
 
 <template>
     <div>
-        <div>
-            ciao
-        </div>
+        <Main></Main>
     </div>
 </template>
 
