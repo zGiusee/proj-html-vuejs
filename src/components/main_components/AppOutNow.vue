@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: "AppOutNow"
+    name: "AppOutNow",
 }
 </script>
 <template lang="">
@@ -15,6 +15,8 @@ export default {
     </div>
 </template>
 <style lang="scss" scoped>
+@use "../../styles/partials/variables" as *;
+
 .bg-guitar {
     background-image: url(../../assets/img/cms_parallax.jpg);
     background-position: center center;
