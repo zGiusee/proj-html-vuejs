@@ -1,4 +1,11 @@
 ### PROGETTO: 'Instrumental Rock'<br>
+#### Team members:<br>
+Giuseppe Belforte;<br>
+Marco Benfante;<br>
+Melissa Musumeci;<br>
+Alessandro Greco;<br>
+Antonio Stasullo;<br>
+
 Owner progetto : Giuseppe Belforte; <br>
 
 Suddivisione delle sezioni con assegnazione dei lavori;<br>
