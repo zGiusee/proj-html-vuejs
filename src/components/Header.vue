@@ -199,7 +199,9 @@ header {
                 list-style-type: none;
                 margin: 0px;
 
-                .linkSectionListLi {}
+                .linkSectionListLi {
+                    margin: 0;
+                }
             }
 
         }
