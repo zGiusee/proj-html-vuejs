@@ -3,7 +3,7 @@ export default {
     name: "AppOutNow",
 }
 </script>
-<template lang="">
+<template>
     <div class="bg-guitar container-fluid">
         <div class="outnow_container container d-flex flex-column">
             <h3 class=" myUppercase fw-bolder">instrumental rock</h3>
