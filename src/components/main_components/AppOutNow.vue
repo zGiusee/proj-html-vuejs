@@ -51,9 +51,4 @@ export default {
 
     }
 }
-
-.prova {
-    height: 400px;
-    background-color: black;
-}
 </style>
