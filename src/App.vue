@@ -1,13 +1,21 @@
 <script >
+import Footer from './components/Footer.vue';
 export default {
-
+    components:{
+        Footer,
+    },
+    data() {
+        return {
+            
+        }
+    },
 }
 </script>
 
 <template>
     <div>
         <div>
-            ciao
+            <Footer />
         </div>
     </div>
 </template>
