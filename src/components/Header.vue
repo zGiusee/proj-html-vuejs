@@ -19,7 +19,9 @@ export default {
                 </div>
             </div>
             <div class="col-6">
+                <div>
 
+                </div>
             </div>
         </div>
     </div>
