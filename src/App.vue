@@ -7,7 +7,7 @@ export default {
 <template>
     <div>
         <div>
-
+            ciao
         </div>
     </div>
 </template>
