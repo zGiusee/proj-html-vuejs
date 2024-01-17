@@ -3,7 +3,7 @@ import AppOutNow from './main_components/AppOutNow.vue';
 
 export default {
     components: {
-        nome: AppOutNow,
+        AppOutNow,
     }
 }
 </script>
