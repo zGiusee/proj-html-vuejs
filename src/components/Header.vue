@@ -6,14 +6,17 @@ export default {
                 {
                     linkName: 'Home',
                     linkRef: '#',
+                    active: true,
                 },
                 {
                     linkName: 'Blog',
                     linkRef: '#',
+                    active: false,
                 },
                 {
                     linkName: 'Events',
                     linkRef: '#',
+                    active: false,
                     linkSection: [
                         {
                             linkSectionName: 'Choral Music',
@@ -41,18 +44,22 @@ export default {
                 {
                     linkName: 'Gallery',
                     linkRef: '#',
+                    active: false,
                 },
                 {
                     linkName: 'About Us',
                     linkRef: '#',
+                    active: false,
                 },
                 {
                     linkName: 'Conctact Us',
                     linkRef: '#',
+                    active: false,
                 },
                 {
                     linkName: 'Shop',
                     linkRef: '#',
+                    active: false,
                     linkSection: [
                         {
                             linkSectionName: 'Product Type',
@@ -87,6 +94,7 @@ export default {
                         {
                             linkSectionName: 'Shop Page',
                             linkSectionRef: '#',
+                            active: false,
                             linkSectionTypes: [
                                 {
                                     typesName: 'Checkout',
@@ -120,7 +128,7 @@ export default {
 </script>
 <template>
     <header class="container-fluid bg-black">
-        <div class="row h-100 align-items-center">
+        <div class="row h-100 align-items-center my-padding-x">
 
             <div class="col-6">
                 <div class="logo-container">
@@ -130,8 +138,13 @@ export default {
 
             <div class="col-6">
                 <div class="nav-list-container">
-                    <ul>
-                        <li></li>
+                    <ul class="linkList">
+                        <li v-for="link, index in headerLinks" :key="index" :href="link.linkRef"
+                            :class="link.active ? 'active' : ''" class="linkListLi">{{ link.linkName }}
+                            <ul class="linkSectionList">
+                                <li></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -149,14 +162,52 @@ header {
     z-index: 999;
 
     .logo-container {
-        margin-left: 25px;
 
         img {
             width: 170px;
         }
     }
 
+    .nav-list-container {
+        display: flex;
+        justify-content: end;
 
+        .linkList {
+            display: flex;
+            list-style-type: none;
+            margin: 0px;
 
+            .linkListLi {
+                color: white;
+                font-size: 15px;
+                letter-spacing: 0.5px;
+                font-weight: bold;
+                padding: 2rem;
+                cursor: pointer;
+
+                &.active {
+                    color: $main_color;
+                }
+
+                &:hover {
+                    color: $main_color;
+                }
+            }
+
+            .linkSectionList {
+                display: flex;
+                list-style-type: none;
+                margin: 0px;
+
+                .linkSectionListLi {}
+            }
+
+        }
+    }
+
+}
+
+.my-padding-x {
+    padding: 0rem 2rem;
 }
 </style>
