@@ -1,15 +1,16 @@
 <script>
 export default {
-
+    name: 'BestMusicBlog',
+    props: {
+        bmb_cards: Array,
+    }
 }
 </script>
 
-<template lang="">
+<template>
     <div>
-        
+
     </div>
 </template>
 
-<style lang="">
-    
-</style>
+<style lang="scss"></style>

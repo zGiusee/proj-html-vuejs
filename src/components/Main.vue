@@ -1,12 +1,14 @@
 <script>
 import AppOutNow from './main_components/AppOutNow.vue';
 import WhoWeAreDue from './main_components/WhoWeAreDue.vue';
+import BestMusicBlog from './main_components/BestMusicBlog.vue';
 
 export default {
     name: 'Main',
     components: {
         AppOutNow,
-        WhoWeAreDue
+        WhoWeAreDue,
+        BestMusicBlog,
     },
     data() {
         return {
@@ -48,6 +50,44 @@ export default {
                     img: '../src/assets/img/image (16).svg'
                 }
             ],
+
+            bmb_cards: [
+                {
+                    title: 'Hip Hop wired to dance make',
+                    date: '06 November 2021',
+                    content: 'Driving short distances music is a music genre that includes traditional folk music and the contemporary genre that evolved from the former',
+                },
+                {
+                    title: 'Music business worldwide',
+                    date: '27 May 2022',
+                    content: 'Accelerate work and drive productivity The Beatles experimentation and creative freedom led other bands to experiment in various ways as well.',
+                },
+                {
+                    title: 'Giveaways rock to all',
+                    date: '07 May 2022',
+                    content: 'Signs Your Car Battery Has To Be Replaced When the dashboard lights start flashing, this is a sign the battery is dying. Several issues arise and',
+                },
+                {
+                    title: 'Drowned in sound feel joy',
+                    date: '10 April 2022',
+                    content: 'Different Types of Music Content For most music creators, they take their work very seriously because of the emotional attachment they may harbor',
+                },
+                {
+                    title: 'Dancing astronaut bounce ipsum',
+                    date: '10 April 2022',
+                    content: 'Music Promotion Channels There are really a lot of music promotion channels out there. Being a music promotion channel involves a lot of work and',
+                },
+                {
+                    title: 'Consequence of sound make us',
+                    date: '14 February 2022',
+                    content: 'Electronic Dance Music Rhythm and Blues Before this, R &amp; B was known as ‘race music,’ a term that originated in the African American',
+                },
+                {
+                    title: 'Artist development and production',
+                    date: '07 December 2021',
+                    content: 'Characterised by its own beat patterns, the lyrics feature what is often extreme violence snd talk of criminal acts. As a result, theres been',
+                },
+            ],
         }
     },
 }
@@ -56,6 +96,7 @@ export default {
     <div>
         <AppOutNow></AppOutNow>
         <WhoWeAreDue :wwr_gallery="wwr_gallery" :wwr_icons="wwr_icons" />
+        <BestMusicBlog :bmb_cards="bmb_cards" />
     </div>
 </template>
 <style lang="scss">
