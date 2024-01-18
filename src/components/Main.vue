@@ -1,12 +1,14 @@
 <script>
 import AppOutNow from './main_components/AppOutNow.vue';
 import WhoWeAreDue from './main_components/WhoWeAreDue.vue';
+import JumbotronSlider from './main_components/JumbotronSlider.vue';
 
 export default {
     name: 'Main',
     components: {
         AppOutNow,
-        WhoWeAreDue
+        WhoWeAreDue,
+        JumbotronSlider,
     },
     data() {
         return {
@@ -48,12 +50,25 @@ export default {
                     img: '../src/assets/img/image (16).svg'
                 }
             ],
-        }
-    },
+            jumbotronSlides: [
+                {
+                    img: '../../assets/image1.png',
+                    title: 'Music in this video',
+                    subtitle: 'Instrumental rock',
+                },
+                {
+                    img: '../../assets/image2.png',
+                    title: 'Music of the spirits',
+                    subtitle: 'Instrumental rock',
+                },
+            ]
+        },
+    }
 }
 </script>
 <template>
     <div>
+        <JumbotronSlider :slides="jumbotronSlides"></JumbotronSlider>
         <AppOutNow></AppOutNow>
         <WhoWeAreDue :wwr_gallery="wwr_gallery" :wwr_icons="wwr_icons" />
     </div>

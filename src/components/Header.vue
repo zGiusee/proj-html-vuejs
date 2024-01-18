@@ -127,9 +127,11 @@ export default {
 }
 </script>
 <template>
+    <!-- HEADER -->
     <header class="container-fluid bg-black">
         <div class="row h-100 align-items-center my-padding-x">
 
+            <!-- LOGO -->
             <div class="col-6">
 
                 <div class="logo-container">
@@ -138,6 +140,7 @@ export default {
 
             </div>
 
+            <!-- NAV LIST AND SEARCH BOX -->
             <div class="col-6">
                 <div class="nav-list-container position-relative ">
 
@@ -162,6 +165,7 @@ export default {
 @use '../styles/generals.scss' as *;
 @use '../styles/partials/variables' as *;
 
+// HEADER STYLES
 header {
     height: 102px;
     position: fixed;
