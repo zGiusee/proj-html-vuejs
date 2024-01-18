@@ -146,7 +146,13 @@ export default {
                             :class="link.active ? 'active' : ''" class="link_list_li">{{ link.linkName }}
                         </li>
                     </ul>
+
+                    <div class="search-container d-flex  justify-content-center">
+                        <img src="../assets/img/search_icon.svg " alt="">
+                    </div>
+
                 </div>
+
             </div>
 
         </div>
@@ -183,7 +189,7 @@ header {
                 font-size: 15px;
                 letter-spacing: 0.5px;
                 font-weight: bold;
-                padding: 2rem;
+                padding: 1.5rem;
                 cursor: pointer;
                 transition: 0.3s;
 
@@ -212,6 +218,14 @@ header {
         }
     }
 
+}
+
+.search-container {
+    padding: 1.5rem;
+
+    img {
+        filter: brightness(0) invert(1);
+    }
 }
 
 
