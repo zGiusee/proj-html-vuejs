@@ -7,6 +7,7 @@
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: bold;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 @mixin white_title {
@@ -17,9 +18,26 @@
 }
 
 @mixin min_title {
-    font-size: 30px;
+    font-size: 27px;
     color: white;
     font-family: 'Bebas Neue';
+    line-height: 30px;
     letter-spacing: 2px;
-    margin-top: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+@mixin min_content {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 27px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+@mixin min_date {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: $main_color;
+    font-size: 15px;
+    margin: 10px 0;
 }
