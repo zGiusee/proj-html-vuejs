@@ -2,7 +2,7 @@
 export default {
     data() {
         return {
-
+            
         }
     },
     methods: {
@@ -12,7 +12,7 @@ export default {
 </script>
 <template>
     <div>
-
+        
     </div>
 </template>
 <style lang="scss">

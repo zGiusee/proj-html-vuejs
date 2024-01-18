@@ -1,5 +1,5 @@
 <script>
-import FooterSlide from './FooterSlide.vue';
+import FooterSlide from './footer_components/FooterSlide.vue';
 export default {
     components:{
         FooterSlide
@@ -56,14 +56,46 @@ export default {
                         },
                     ]
                 }
-            ]
+            ],
+            slider: [
+                {
+                    image: "../../assets/img/instagram_img1.jpg"
+                },
+                {
+                    image: "../../assets/img/instagram_img2.jpg"
+                },
+                {
+                    image: "../../assets/img/instagram_img3.jpg"
+                },
+                {
+                    image: "../../assets/img/instagram_img4.jpg"
+                },
+                {
+                    image: "../../assets/img/instagram_img5.jpg"
+                },
+                {
+                    image: "../../assets/img/instagram_img6.jpg"
+                },
+                {
+                    image: "../../assets/img/instagram_img7.jpg"
+                },
+                {
+                    image: "../../assets/img/instagram_img8.jpg"
+                },
+                {
+                    image: "../../assets/img/instagram_img9.jpg"
+                },
+                {
+                    image: "../../assets/img/instagram_img10.jpg"
+                },
+            ],
         }
     },
 }
 </script>
 <template>
     <footer>
-        <FooterSlide />
+        <FooterSlide :footerSlide="slider"></FooterSlide>
         <div class="top-footer">
             <div class="container-fluid">
                 <div class="row">
@@ -146,7 +178,7 @@ export default {
     width: 100%;
     background-color: black;
     color: white;
-    height: 500px;
+    height: calc(100vh - 180px - 90px);
     display: flex;
     align-items: center;
     padding: 0px 20px;
