@@ -4,7 +4,7 @@ import WhoWeAreDue from './main_components/WhoWeAreDue.vue';
 
 export default {
     name: 'Main',
-    componets: {
+    components: {
         AppOutNow,
         WhoWeAreDue
     },
