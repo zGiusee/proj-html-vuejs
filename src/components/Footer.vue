@@ -113,10 +113,21 @@ export default {
                             <input type="email" class="form-control" id="email" placeholder="Email">
                         </div>
                         <div class="text_area">
-                            <textarea class="form-control" id="text_area" rows="5"></textarea>
+                            <textarea class="form-control" id="text_area" rows="3" placeholder="Message"></textarea>
                         </div>
                         <div class="button">
-                            <button type="submit" class="btn btn-primary mb-3">SEND MESSAGE</button>
+                            <button type="submit">SEND MESSAGE</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="copyright">
+                            <h6>© 2024 All Rights Reserved. Developed By Ciccio</h6>
                         </div>
                     </div>
                 </div>
@@ -170,6 +181,54 @@ export default {
         font-size: 1.7rem;
         font-weight: bold;
     }
-}
 
+    #text_area{
+        border: 1px solid rgb(57, 57, 57);
+        margin-top: 15px;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+
+    #email{
+        border: 1px solid rgb(57, 57, 57);
+        padding: 10px;
+    }
+
+    textarea::placeholder{
+        color: rgb(57, 57, 57);
+        padding: 10px;
+    }
+
+    input::placeholder{
+        color: rgb(57, 57, 57);
+        padding: 10px;
+    }
+
+    button{
+        border: 1px solid #F2870C;
+        padding: 10px 60px;
+        background-color: transparent;
+        color: white;
+        &:hover{
+            background-color: #F2870C;
+            transition: 0.3s;
+        }
+    }
+}
+.bottom-footer{
+    border-top: 1px solid rgb(57, 57, 57);
+    background-color: black;
+    color: white;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    .copyright{
+        text-align: center;
+        h6{
+            color: rgb(165, 165, 165);
+            letter-spacing: 1px;
+            font-size: 1rem;
+        }
+    }
+}
 </style>
