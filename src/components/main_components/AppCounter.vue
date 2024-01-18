@@ -79,6 +79,7 @@ export default {
 
                 &:hover {
                     filter: invert(64%) sepia(33%) saturate(5686%) hue-rotate(359deg) brightness(100%) contrast(92%);
+                    cursor: pointer;
                 }
             }
 
