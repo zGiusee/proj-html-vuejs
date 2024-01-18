@@ -3,6 +3,7 @@ import AppOutNow from './main_components/AppOutNow.vue';
 import WhoWeAreDue from './main_components/WhoWeAreDue.vue';
 
 export default {
+    name: 'Main',
     componets: {
         AppOutNow,
         WhoWeAreDue
@@ -49,7 +50,6 @@ export default {
             ],
         }
     },
-    methods: {},
 }
 </script>
 <template>

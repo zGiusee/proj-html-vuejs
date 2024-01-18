@@ -1,6 +1,6 @@
 <script>
 export default {
-
+    name: 'WhoWeAreDue',
     props: {
         wwr_gallery: Array,
         wwr_icons: Array,
@@ -9,7 +9,7 @@ export default {
 }
 </script>
 
-<template lang="">
+<template>
     <div class="wwr-cont">
         <div class="container">
             <!-- TITOLI DELLA SECTION -->
@@ -21,14 +21,14 @@ export default {
                 <!-- SINGOLA CARD DELLA GALLERY DA CICLARE -->
                 <div class="col-4 text-center wwr-card my-3" v-for="card, index in wwr_gallery" :key="index">
                     <div class="card-image">
-                        <img :src="card.img"> 
+                        <img :src="card.img">
                     </div>
                     <div class="card-title">{{ card.title }}</div>
                     Stream On : <img v-for="icon, index in wwr_icons" :key="index" :src="icon.img" class="wwr-icons">
                 </div>
             </div>
         </div>
-        
+
     </div>
 </template>
 
