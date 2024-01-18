@@ -1,0 +1,25 @@
+@use '../generals.scss' as *;
+@use './variables' as *;
+
+@mixin orange_title {
+    font-size: 15px;
+    color: $main_color;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+@mixin white_title {
+    font-size: 70px;
+    color: white;
+    font-family: 'Bebas Neue';
+    letter-spacing: 2px;
+}
+
+@mixin min_title {
+    font-size: 30px;
+    color: white;
+    font-family: 'Bebas Neue';
+    letter-spacing: 2px;
+    margin-top: 5px;
+}

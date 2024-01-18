@@ -1,19 +1,19 @@
-<script >
-import Header from './components/Header.vue'
+<script>
 import Main from './components/Main.vue';
+import Header from './components/Header.vue';
 
 export default {
     components: {
         Header,
-        Main
+        Main,
     },
 }
 </script>
 
 <template>
     <div>
-        <Header></Header>
-        <Main></Main>
+        <Header />
+        <Main />
     </div>
 </template>
 
