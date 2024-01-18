@@ -82,7 +82,10 @@ export default {
                             Email: <a href="#">demo@example.com</a>
                         </p>
                         <div class="icons">
-                            icon icon icon icon
+                            <a href="#"><i class="bi bi-instagram light"></i></a>
+                            <a href="#"><i class="bi bi-facebook light"></i></a>
+                            <a href="#"><i class="bi bi-twitter light"></i></a>
+                            <a href="#"><i class="bi bi-youtube light"></i></a>
                         </div>
                     </div>
                     <div class="col-3">
@@ -140,11 +143,13 @@ export default {
 @use '../styles/partials/variables' as *;
 
 .top-footer{
+    width: 100%;
     background-color: black;
     color: white;
     height: 500px;
     display: flex;
     align-items: center;
+    padding: 0px 20px;
 
     .info{
         padding-right: 100px;
@@ -160,6 +165,14 @@ export default {
     a{
         text-decoration: none;
         color: rgb(165, 165, 165);
+        &:hover{
+            color: #F2870C;
+        }
+    }
+
+    .light{
+        color: white;
+        margin-right: 25px;
         &:hover{
             color: #F2870C;
         }
@@ -216,6 +229,7 @@ export default {
     }
 }
 .bottom-footer{
+    width: 100%;
     border-top: 1px solid rgb(57, 57, 57);
     background-color: black;
     color: white;

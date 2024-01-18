@@ -43,7 +43,7 @@ export default {
 }
 </script>
 <template>
-    <div class="container-fluid p-0">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="insta">
@@ -76,6 +76,7 @@ export default {
 .insta{
     display: flex;
     overflow-x: auto;
+    width: 100%;
 }
 
 .insta::-webkit-scrollbar{
