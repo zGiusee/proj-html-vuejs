@@ -10,6 +10,11 @@ export default {
 
         }
     },
+    created() {
+        this.startAutoPlay()
+    },
+    composed: {
+    },
     methods: {
         // FUNZIONE DI AVANZAMENTO SLIDES
         nextImg() {
@@ -34,7 +39,12 @@ export default {
         getImagePath: function (imgPath) {
             let url = new URL(imgPath, import.meta.url).href;
             return url
-        }
+        },
+        startAutoPlay() {
+            setInterval(() => {
+                this.nextImg();
+            }, 4000);
+        },
     },
 
 }
@@ -43,10 +53,12 @@ export default {
     <div class="slider_wrapper">
         <div class="text-center">
             <!-- IMMAGINE DI BACKGROUND -->
-            <div>
-                <img :src="`${getImagePath(slides[this.currentImage].img)}`" alt="">
-            </div>
 
+            <transition name="img-transition">
+                <div>
+                    <img :src="`${getImagePath(slides[this.currentImage].img)}`" alt="">
+                </div>
+            </transition>
             <!-- TITOLO E SOTTOTITOLO -->
             <div class="title-container">
                 <h1>{{ slides[this.currentImage].title }}</h1>
@@ -70,6 +82,16 @@ export default {
 <style lang="scss" scoped>
 @use '../../styles/generals.scss' as *;
 @use '../../styles/partials/variables' as *;
+
+.img-transition-enter-active,
+.img-transition-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.img-transition-enter-from,
+.img-transition-leave-to {
+    opacity: 0;
+}
 
 .slider_wrapper {
     position: relative;
@@ -97,6 +119,7 @@ export default {
             font-size: 100px;
             letter-spacing: 1px;
             font-weight: bold;
+            opacity: 1;
 
         }
     }
@@ -114,8 +137,8 @@ export default {
             font-size: 22px;
             letter-spacing: 0px;
             font-weight: 700;
+            opacity: 1;
             color: $main_color;
-            white-space: nowrap;
         }
     }
 
@@ -174,6 +197,31 @@ export default {
         &:hover {
             background-color: rgba(0, 0, 0, 0.9);
         }
+    }
+}
+
+@keyframes slide_title_text {
+    0% {
+        font-size: 20px;
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 0;
+    }
+
+    45% {
+        opacity: 0.3;
+    }
+
+    80% {
+        opacity: 1;
+        font-size: 100px;
+    }
+
+    100% {
+        opacity: 1;
+        font-size: 100px;
     }
 }
 
