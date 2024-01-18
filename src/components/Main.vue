@@ -8,7 +8,7 @@ export default {
     components: {
         AppOutNow,
         WhoWeAreDue,
-        JumbotronSlider,
+        JumbotronSlider
     },
     data() {
         return {
@@ -62,8 +62,8 @@ export default {
                     subtitle: 'Instrumental rock',
                 },
             ]
-        },
-    }
+        }
+    },
 }
 </script>
 <template>
