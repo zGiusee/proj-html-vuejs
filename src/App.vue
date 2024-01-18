@@ -4,11 +4,6 @@ export default {
     components:{
         Footer,
     },
-    data() {
-        return {
-            
-        }
-    },
 }
 </script>
 
@@ -20,4 +15,6 @@ export default {
     </div>
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+
+</style>
