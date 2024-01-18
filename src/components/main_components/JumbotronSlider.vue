@@ -41,17 +41,143 @@ export default {
 </script>
 <template>
     <div class="slider_wrapper">
-        <div>
-            <img :src="`${getImagePath(slides[this.currentImage].img)}`" alt="">
+        <div class="text-center">
+            <!-- IMMAGINE DI BACKGROUND -->
+            <div>
+                <img :src="`${getImagePath(slides[this.currentImage].img)}`" alt="">
+            </div>
+
+            <!-- TITOLO E SOTTOTITOLO -->
+            <div class="title-container">
+                <h1>{{ slides[this.currentImage].title }}</h1>
+            </div>
+
+            <div class="subtitle-container">
+                <h4>{{ slides[this.currentImage].subtitle }}</h4>
+            </div>
+
+            <!-- READ MORE BUTTON -->
+            <div class="read-more-container">
+                <button class="my-btn" type="button"> Read more</button>
+            </div>
         </div>
-        <div> <img src="" alt=""></div>
+
+        <!-- TASTI LATERALI PER CAMBIARE IMMMAGINE -->
+        <div class="left" @click="prevImg"><i class="bi bi-chevron-left"></i></div>
+        <div class="right" @click="nextImg"><i class="bi bi-chevron-right"></i></div>
     </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 @use '../../styles/generals.scss' as *;
 @use '../../styles/partials/variables' as *;
 
-img {
-    width: 100%;
+.slider_wrapper {
+    position: relative;
+
+    img {
+        margin-top: 102px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+
+    }
+
+    // TITLE AND SUBTITLE
+
+    // TITLE
+    .title-container {
+        position: absolute;
+        top: 44%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h1 {
+            text-transform: uppercase;
+            color: white;
+            font-size: 100px;
+            letter-spacing: 1px;
+            font-weight: bold;
+
+        }
+    }
+
+    // SUBTITLE
+    .subtitle-container {
+        position: absolute;
+        top: 33%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        h4 {
+            font-family: 'Open Sans', sans-serif;
+            text-transform: uppercase;
+            font-size: 22px;
+            letter-spacing: 0px;
+            font-weight: 700;
+            color: $main_color;
+            white-space: nowrap;
+        }
+    }
+
+    // READ MORE BUTTON
+
+    .read-more-container {
+        position: absolute;
+        top: 58%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .my-btn {
+            text-transform: uppercase;
+            color: white;
+            letter-spacing: 1px;
+            font-weight: bold;
+            font-size: 15px;
+            border: 1px solid $main_color;
+            padding: 14px 55px;
+            background-color: transparent;
+            transition: all 0.3s;
+
+
+        }
+
+        .my-btn:hover {
+            background-color: $main_color;
+        }
+    }
+
+    // ARROW BUTTON STYLE AND POSITIONING
+    .left,
+    .right {
+        position: absolute;
+        top: 50%;
+    }
+
+    .left {
+        margin-left: 20px;
+    }
+
+    .right {
+        right: 0px;
+        margin-right: 20px;
+    }
+
+
+    i {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 8px 12px;
+        cursor: pointer;
+        color: white;
+
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+    }
+}
+
+.slider_wrapper:hover i {
+    display: block;
 }
 </style>
