@@ -33,10 +33,16 @@ export default {
 
             wwr_icons: [
                 {
-                    img:
+                    title: 'youtube',
+                    img: '../src/assets/img/image (20).svg',
                 },
+
+                {
+                    title: 'nota musicale',
+                    img: '../src/assets/img/image (16).svg'
+                }
             ],
-        };
+        }
     },
     methods: {},
     components: { WhoWeAreDue }
@@ -44,7 +50,7 @@ export default {
 </script>
 <template>
     <div>
-        <WhoWeAreDue :wwr_gallery="wwr_gallery" />
+        <WhoWeAreDue :wwr_gallery="wwr_gallery" :wwr_icons="wwr_icons" />
     </div>
 </template>
 <style lang="scss">

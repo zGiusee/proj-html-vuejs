@@ -3,6 +3,7 @@ export default {
 
     props: {
         wwr_gallery: Array,
+        wwr_icons: Array,
     }
 
 }
@@ -23,7 +24,7 @@ export default {
                         <img :src="card.img"> 
                     </div>
                     <div class="card-title">{{ card.title }}</div>
-                    Stream On : icons <img src="../../assets/img/image (22).svg" class="wwr-icons">
+                    Stream On : <img v-for="icon, index in wwr_icons" :key="index" :src="icon.img" class="wwr-icons">
                 </div>
             </div>
         </div>
@@ -70,6 +71,9 @@ export default {
 
         .wwr-icons {
             filter: brightness(0) invert(1);
+            height: 15px;
+            margin: 0px 8px;
+
         }
     }
 
