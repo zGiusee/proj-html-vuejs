@@ -1,25 +1,17 @@
 <script>
 export default {
     name: 'JumbotronSlider',
+    props: {
+        slides: Object,
+    },
     data() {
         return {
             currentImage: 0,
-            slides: [
-                {
-                    img: '../../assets/image1.png',
-                    title: 'Music in this video',
-                    subtitle: 'Instrumental rock',
-                },
-                {
-                    img: '../../assets/image2.png',
-                    title: 'Music of the spirits',
-                    subtitle: 'Instrumental rock',
-                },
-            ]
 
         }
     },
     methods: {
+        // FUNZIONE DI AVANZAMENTO SLIDES
         nextImg() {
 
             if (this.currentImage == this.slides.length - 1) {
@@ -38,6 +30,7 @@ export default {
                 this.currentImage--;
             }
         },
+        // FUNZIONE CHE RECUPERA L'URL DELLE IMMAGINI
         getImagePath: function (imgPath) {
             let url = new URL(imgPath, import.meta.url).href;
             return url
@@ -47,8 +40,11 @@ export default {
 }
 </script>
 <template>
-    <div>
-        <img :src="`${getImagePath(slides[this.currentImage].img)}`" alt="">
+    <div class="slider_wrapper">
+        <div>
+            <img :src="`${getImagePath(slides[this.currentImage].img)}`" alt="">
+        </div>
+        <div> <img src="" alt=""></div>
     </div>
 </template>
 <style lang="scss">

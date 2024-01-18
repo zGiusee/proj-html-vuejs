@@ -6,12 +6,28 @@ export default {
     components: {
         AppOutNow,
         JumbotronSlider,
-    }
+    },
+    data() {
+        return {
+            jumbotronSlides: [
+                {
+                    img: '../../assets/image1.png',
+                    title: 'Music in this video',
+                    subtitle: 'Instrumental rock',
+                },
+                {
+                    img: '../../assets/image2.png',
+                    title: 'Music of the spirits',
+                    subtitle: 'Instrumental rock',
+                },
+            ]
+        }
+    },
 }
 </script>
 <template>
     <div>
-        <JumbotronSlider></JumbotronSlider>
+        <JumbotronSlider :slides="jumbotronSlides"></JumbotronSlider>
         <AppOutNow></AppOutNow>
     </div>
 </template>
