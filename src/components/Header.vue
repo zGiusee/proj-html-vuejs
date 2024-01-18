@@ -131,19 +131,19 @@ export default {
         <div class="row h-100 align-items-center my-padding-x">
 
             <div class="col-6">
+
                 <div class="logo-container">
                     <img src="../assets/img/Logo.png" alt="">
                 </div>
+
             </div>
 
             <div class="col-6">
-                <div class="nav-list-container">
-                    <ul class="linkList">
+                <div class="nav-list-container position-relative ">
+
+                    <ul class="link_list">
                         <li v-for="link, index in headerLinks" :key="index" :href="link.linkRef"
-                            :class="link.active ? 'active' : ''" class="linkListLi">{{ link.linkName }}
-                            <ul class="linkSectionList">
-                                <li></li>
-                            </ul>
+                            :class="link.active ? 'active' : ''" class="link_list_li">{{ link.linkName }}
                         </li>
                     </ul>
                 </div>
@@ -160,6 +160,7 @@ header {
     height: 102px;
     position: fixed;
     z-index: 999;
+    text-transform: uppercase;
 
     .logo-container {
 
@@ -172,18 +173,19 @@ header {
         display: flex;
         justify-content: end;
 
-        .linkList {
+        .link_list {
             display: flex;
             list-style-type: none;
             margin: 0px;
 
-            .linkListLi {
+            .link_list_li {
                 color: white;
                 font-size: 15px;
                 letter-spacing: 0.5px;
                 font-weight: bold;
                 padding: 2rem;
                 cursor: pointer;
+                transition: 0.3s;
 
                 &.active {
                     color: $main_color;
@@ -192,22 +194,26 @@ header {
                 &:hover {
                     color: $main_color;
                 }
+
+                // .link_section_list {
+                //     list-style-type: none;
+                //     position: absolute;
+                //     padding: 0px;
+                //     background-color: $main_grey;
+
+                //     .link_section_list_li {
+                //         padding: 15px 10px 15px 10px;
+                //         border-bottom: 0.5px solid white;
+                //     }
+                // }
             }
 
-            .linkSectionList {
-                display: flex;
-                list-style-type: none;
-                margin: 0px;
-
-                .linkSectionListLi {
-                    margin: 0;
-                }
-            }
 
         }
     }
 
 }
+
 
 .my-padding-x {
     padding: 0rem 2rem;
