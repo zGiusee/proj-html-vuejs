@@ -11,17 +11,19 @@ export default {
 <template lang="">
     <div class="wwr-cont">
         <div class="container">
+            <!-- TITOLI DELLA SECTION -->
             <div class="text-center">
                 <span class="wwr-subtitle">who we are</span><br>
                 <span class="wwr-title">sense the jazz</span>
             </div>
             <div class="row">
+                <!-- SINGOLA CARD DELLA GALLERY DA CICLARE -->
                 <div class="col-4 text-center wwr-card my-3" v-for="card, index in wwr_gallery" :key="index">
                     <div class="card-image">
                         <img :src="card.img"> 
                     </div>
                     <div class="card-title">{{ card.title }}</div>
-                    Stream On : icons
+                    Stream On : icons <img src="../../assets/img/image (22).svg" class="wwr-icons">
                 </div>
             </div>
         </div>
@@ -37,6 +39,7 @@ export default {
 .wwr-cont {
     background-color: black;
     color: grey;
+    padding: 100px 0;
 
     .wwr-subtitle {
         @include orange_title;
@@ -46,9 +49,6 @@ export default {
         @include white_title;
     }
 
-    img {
-        width: 100%;
-    }
 
     .wwr-card {
         .card-title {
@@ -60,12 +60,18 @@ export default {
 
             img {
                 transition: transform 0.5s ease;
+                width: 100%;
             }
 
             &:hover img {
                 transform: scale(1.05);
             }
         }
+
+        .wwr-icons {
+            filter: brightness(0) invert(1);
+        }
     }
+
 }
 </style>

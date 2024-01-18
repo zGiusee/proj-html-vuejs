@@ -30,6 +30,12 @@ export default {
                     img: '../src/assets/img/gallery6.jpg',
                 },
             ],
+
+            wwr_icons: [
+                {
+                    img:
+                },
+            ],
         };
     },
     methods: {},
