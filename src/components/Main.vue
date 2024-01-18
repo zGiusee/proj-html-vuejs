@@ -1,12 +1,14 @@
 <script>
 import AppOutNow from './main_components/AppOutNow.vue';
 import WhoWeAreDue from './main_components/WhoWeAreDue.vue';
+import AppCounter from './main_components/AppCounter.vue';
 
 export default {
     name: 'Main',
     components: {
         AppOutNow,
-        WhoWeAreDue
+        WhoWeAreDue,
+        AppCounter,
     },
     data() {
         return {
@@ -55,6 +57,7 @@ export default {
 <template>
     <div>
         <AppOutNow></AppOutNow>
+        <AppCounter />
         <WhoWeAreDue :wwr_gallery="wwr_gallery" :wwr_icons="wwr_icons" />
     </div>
 </template>
