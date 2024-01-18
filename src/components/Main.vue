@@ -2,13 +2,15 @@
 import AppOutNow from './main_components/AppOutNow.vue';
 import WhoWeAreDue from './main_components/WhoWeAreDue.vue';
 import JumbotronSlider from './main_components/JumbotronSlider.vue';
+import AppCounter from './main_components/AppCounter.vue';
 
 export default {
     name: 'Main',
     components: {
         AppOutNow,
         WhoWeAreDue,
-        JumbotronSlider
+        JumbotronSlider,
+        AppCounter,
     },
     data() {
         return {
@@ -70,6 +72,7 @@ export default {
     <div>
         <JumbotronSlider :slides="jumbotronSlides"></JumbotronSlider>
         <AppOutNow></AppOutNow>
+        <AppCounter />
         <WhoWeAreDue :wwr_gallery="wwr_gallery" :wwr_icons="wwr_icons" />
     </div>
 </template>
