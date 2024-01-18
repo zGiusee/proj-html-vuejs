@@ -9,7 +9,7 @@ export default {
             <h3 class=" myUppercase fw-bolder">instrumental rock</h3>
             <h1 class="text-white myUppercase fw-bolder">album out now</h1>
             <div>
-                <span class="text-white myUppercase" id="readMore">read more</span>
+                <span class="text-white myUppercase pointer" id="readMore">read more</span>
             </div>
         </div>
     </div>
@@ -47,6 +47,10 @@ export default {
             border: 1px solid $main_color;
             padding: 12px 54px;
             margin-top: 40px;
+
+            &:hover {
+                background-color: $main_color;
+            }
         }
 
     }
