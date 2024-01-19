@@ -38,7 +38,7 @@ export default {
         // FUNZIONE CHE RECUPERA L'URL DELLE IMMAGINI
         getImagePath: function (imgPath) {
             let url = new URL(imgPath, import.meta.url).href;
-            return url
+            return url;
         },
         startAutoPlay() {
             setInterval(() => {
@@ -76,11 +76,33 @@ export default {
         <!-- TASTI LATERALI PER CAMBIARE IMMMAGINE -->
         <div class="left" @click="prevImg"><i class="bi bi-chevron-left"></i></div>
         <div class="right" @click="nextImg"><i class="bi bi-chevron-left my-rotate"></i></div>
+
+        <div class="arrow-container">
+            <span class="arrow"><a href="#jumbotron_slider"><i class="bi bi-chevron-up"></i></a></span>
+        </div>
     </div>
 </template>
 <style lang="scss" scoped>
 @use '../../styles/generals.scss' as *;
 @use '../../styles/partials/variables' as *;
+
+.arrow-container {
+    position: fixed;
+    z-index: 999;
+    right: 30px;
+    bottom: 30px;
+
+    .bi-chevron-up {
+        display: block;
+        // display: none;
+        background-color: transparent;
+        padding: 4px 8px;
+        cursor: pointer;
+        color: $main_color;
+        border: 2px solid $main_color;
+
+    }
+}
 
 
 .slider_wrapper {
@@ -183,7 +205,7 @@ export default {
     }
 
 
-    i {
+    .bi-chevron-left {
         display: block;
         // display: none;
         background-color: rgba(0, 0, 0, 0.5);

@@ -105,7 +105,7 @@ export default {
 
         <!-- Top Footer that has Info Section -->
         <div class="top-footer">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="row">
                     <div class="col-3">
 
@@ -187,12 +187,12 @@ export default {
                 </div>
             </div>
         </div>
-
     </footer>
 </template>
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
 @use '../styles/partials/variables' as *;
+
 
 .top-footer {
     width: 100%;
