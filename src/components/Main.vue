@@ -1,10 +1,10 @@
 <script>
 import AppOutNow from './main_components/AppOutNow.vue';
 import WhoWeAreDue from './main_components/WhoWeAreDue.vue';
+import sense_the_jazz_1 from './main_components/sense_the_jazz_1.vue';
 import BestMusicBlog from './main_components/BestMusicBlog.vue';
 import JumbotronSlider from './main_components/JumbotronSlider.vue';
 import AppCounter from './main_components/AppCounter.vue';
-
 export default {
     name: 'Main',
     components: {
@@ -13,6 +13,7 @@ export default {
         JumbotronSlider,
         AppCounter,
         BestMusicBlog,
+        sense_the_jazz_1,
     },
     data() {
         return {
@@ -117,6 +118,7 @@ export default {
 <template>
     <div>
         <JumbotronSlider :slides="jumbotronSlides"></JumbotronSlider>
+        <sense_the_jazz_1></sense_the_jazz_1>
         <AppOutNow></AppOutNow>
         <AppCounter />
         <WhoWeAreDue :wwr_gallery="wwr_gallery" :wwr_icons="wwr_icons" />
