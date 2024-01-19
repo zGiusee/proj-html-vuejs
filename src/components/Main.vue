@@ -119,9 +119,9 @@ export default {
     <div>
         <JumbotronSlider :slides="jumbotronSlides"></JumbotronSlider>
         <sense_the_jazz_1></sense_the_jazz_1>
+        <WhoWeAreDue :wwr_gallery="wwr_gallery" :wwr_icons="wwr_icons" />
         <AppOutNow></AppOutNow>
         <AppCounter />
-        <WhoWeAreDue :wwr_gallery="wwr_gallery" :wwr_icons="wwr_icons" />
         <BestMusicBlog :bmb_cards="bmb_cards" />
     </div>
 </template>
