@@ -17,6 +17,7 @@ export default {
                     linkName: 'Events',
                     linkRef: '#',
                     active: false,
+                    linkSectionDropDownEvents: true,
                     linkSection: [
                         {
                             linkSectionName: 'Choral Music',
@@ -60,10 +61,13 @@ export default {
                     linkName: 'Shop',
                     linkRef: '#',
                     active: false,
+                    linkSectionDropDownShop: true,
                     linkSection: [
                         {
                             linkSectionName: 'Product Type',
+                            id: 'ProductType',
                             linkSectionRef: '#',
+                            linkSectionTypesDropDownProduct: true,
                             linkSectionTypes: [
                                 {
                                     typesName: 'Simple Product',
@@ -93,8 +97,10 @@ export default {
                         },
                         {
                             linkSectionName: 'Shop Page',
+                            id: 'ShopPage',
                             linkSectionRef: '#',
                             active: false,
+                            linkSectionTypesDropDownShop: true,
                             linkSectionTypes: [
                                 {
                                     typesName: 'Checkout',
@@ -141,12 +147,52 @@ export default {
             </div>
 
             <!-- NAV LIST AND SEARCH BOX -->
-            <div class="col-6">
-                <div class="nav-list-container position-relative ">
+            <div class="col-6 h-100">
+                <div class="nav-list-container h-100">
 
+                    <!-- PRIMA CICLATA DELLA BARRA DI NAVIGAZIONE CON CONDIZIONE -->
+                    <!-- CONDIZIONE PER PER L'ICONA 'CHEVRON' ALLE VOCI 'EVENTS' E 'SHOP' -->
                     <ul class="link_list">
                         <li v-for="link, index in headerLinks" :key="index" :href="link.linkRef"
-                            :class="link.active ? 'active' : ''" class="link_list_li">{{ link.linkName }}
+                            :class="link.active ? 'active' : ''" class="link_list_li" :id="link.linkName">
+                            <span class="link">{{ link.linkName }}</span> <i v-if="link.linkName == 'Events'"
+                                class="bi bi-chevron-down"></i>
+                            <i v-else-if="link.linkName == 'Shop'" class="bi bi-chevron-down"></i>
+
+                            <!-- SECONDA CICLATA (SECTION LIST) CON CONDIZIONE -->
+                            <!-- CONDIZIONE DI CONTROLLO PER FAR SI CHE NON SI CREINO SOTTOLISTE ANCHE DOVE NON SONO NECESSARIE -->
+                            <ul class="link_section_list" v-if="link.linkSectionDropDownEvents">
+                                <li v-for="section_url, index in link.linkSection" :key="index">
+                                    {{ section_url.linkSectionName }}
+                                </li>
+                            </ul>
+
+                            <!-- SECONDA CICLATA (SECTION LIST) CON CONDIZIONE -->
+                            <!-- CONDIZIONE DI CONTROLLO PER FAR SI CHE NON SI CREINO SOTTOLISTE ANCHE DOVE NON SONO NECESSARIE -->
+                            <ul class="link_section_list_right" v-if="link.linkSectionDropDownShop">
+                                <li class="link_section_list_li position-relative"
+                                    v-for="section_url, index in link.linkSection" :key="index" :id="section_url.id">
+                                    <span class="section_url">{{ section_url.linkSectionName }}</span> <i
+                                        class="bi bi-chevron-right chevron-position"></i>
+
+                                    <!-- TERZA CICLATA (TYPES LIST) CON CONDIZIONE -->
+                                    <!-- CONDIZIONE DI CONTROLLO PER FAR SI CHE NON SI CREINO SOTTOLISTE ANCHE DOVE NON SONO NECESSARIE -->
+                                    <ul class="link_types_list_shop" v-if="section_url.linkSectionTypesDropDownShop">
+                                        <li v-for="types_url, index in section_url.linkSectionTypes" :key="index">
+                                            {{ types_url.typesName }}
+                                        </li>
+                                    </ul>
+
+                                    <!-- TERZA CICLATA (TYPES LIST) CON CONDIZIONE -->
+                                    <!-- CONDIZIONE DI CONTROLLO PER FAR SI CHE NON SI CREINO SOTTOLISTE ANCHE DOVE NON SONO NECESSARIE -->
+                                    <ul class="link_types_list_product" v-if="section_url.linkSectionTypesDropDownProduct">
+                                        <li v-for="types_url, index in section_url.linkSectionTypes" :key="index">
+                                            {{ types_url.typesName }}
+                                        </li>
+                                    </ul>
+
+                                </li>
+                            </ul>
                         </li>
                     </ul>
 
@@ -164,13 +210,14 @@ export default {
 <style lang="scss">
 @use '../styles/generals.scss' as *;
 @use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
 
 // HEADER STYLES
 header {
-    height: 102px;
     position: fixed;
     z-index: 999;
     text-transform: uppercase;
+    height: 102px;
 
     .logo-container {
 
@@ -179,51 +226,184 @@ header {
         }
     }
 
+    // NAV BAR LIST MENU
     .nav-list-container {
         display: flex;
         justify-content: end;
-
-        .link_list {
-            display: flex;
-            list-style-type: none;
-            margin: 0px;
-
-            .link_list_li {
-                color: white;
-                font-size: 15px;
-                letter-spacing: 0.5px;
-                font-weight: bold;
-                padding: 1.5rem;
-                cursor: pointer;
-                transition: 0.3s;
-
-                &.active {
-                    color: $main_color;
-                }
-
-                &:hover {
-                    color: $main_color;
-                }
-
-                // .link_section_list {
-                //     list-style-type: none;
-                //     position: absolute;
-                //     padding: 0px;
-                //     background-color: $main_grey;
-
-                //     .link_section_list_li {
-                //         padding: 15px 10px 15px 10px;
-                //         border-bottom: 0.5px solid white;
-                //     }
-                // }
-            }
+        position: relative;
 
 
+
+    }
+
+}
+
+// PRIMA LISTA (PRIMA CICLATA VOCI NAV-MENU)
+.link_list {
+    display: flex;
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+
+    .link_list_li {
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+        font-weight: bold;
+        padding: 1.5rem;
+        cursor: pointer;
+
+
+        &.active {
+            color: $main_color;
         }
     }
 
 }
 
+// HOVER PRIMA LISTA
+.link:hover {
+    transition: 0.2s;
+    color: $main_color;
+}
+
+
+// SECTION LIST (SECONDA CICLATA, LISTA NORMALE E DESTRA[SHOP])
+
+// NORMALE
+.link_section_list {
+    @include ul_header_default_config;
+    top: 102px;
+
+    li {
+        @include li_style;
+        transition: 0.2s;
+
+    }
+}
+
+// HOVER EVENTS
+#Events:hover .link_section_list {
+    display: block;
+}
+
+.link_section_list:hover {
+    display: block;
+}
+
+.link_section_list li:hover {
+    color: $main_color;
+}
+
+
+
+// DESTRA[SHOP]
+.link_section_list_right {
+    @include ul_header_default_config;
+    top: 102px;
+    right: 90px;
+
+    .link_section_list_li {
+        @include li_style;
+    }
+}
+
+//HOVER SHOP [DESTRA]
+
+#Shop:hover .link_section_list_right {
+    display: block;
+}
+
+.link_section_list_right:hover {
+    display: block;
+}
+
+// HOVER SECITON URL
+.section_url:hover {
+    color: $main_color;
+    transition: 0.2s
+}
+
+
+// TYPE LIST (TERZA CICLATA, PRODUCT E SHOP)
+
+// PRODUCT
+.link_types_list_product {
+    @include ul_header_default_config;
+    top: 0px;
+    right: 300px;
+
+    li {
+        @include li_style;
+        transition: 0.2s;
+    }
+}
+
+// HOVER DI PRODUCT TYPES
+#ProductType:hover .link_types_list_product {
+    display: block;
+}
+
+.link_types_list_product:hover {
+    display: block;
+}
+
+.link_types_list_product li:hover {
+    color: $main_color;
+}
+
+
+// SHOP
+.link_types_list_shop {
+    @include ul_header_default_config;
+    top: 0px;
+    right: 300px;
+
+    li {
+        @include li_style;
+        transition: 0.2s;
+    }
+}
+
+// HOVER DI SHOP TYPES
+#ShopPage:hover .link_types_list_shop {
+    display: block;
+}
+
+.link_types_list_shop:hover {
+    display: block;
+}
+
+.link_types_list_shop li:hover {
+    color: $main_color;
+}
+
+
+// CHEVRON ICONS
+
+// SEZIONE
+.bi-chevron-down::before {
+    font-size: 9px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+
+// SOTTO SEZIONE
+.bi-chevron-right::before {
+    margin-bottom: 10px;
+    font-size: 9px;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 12px;
+    right: 10px;
+}
+
+
+// SEARCH ICON
 .search-container {
     padding: 1.5rem;
 
@@ -232,7 +412,7 @@ header {
     }
 }
 
-
+// GENERAL POSITIONING
 .my-padding-x {
     padding: 0rem 2rem;
 }

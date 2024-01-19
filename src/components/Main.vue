@@ -117,7 +117,7 @@ export default {
 </script>
 <template>
     <div>
-        <JumbotronSlider :slides="jumbotronSlides"></JumbotronSlider>
+        <JumbotronSlider id="jumbotron_slider" :slides="jumbotronSlides"></JumbotronSlider>
         <sense_the_jazz_1></sense_the_jazz_1>
         <WhoWeAreDue :wwr_gallery="wwr_gallery" :wwr_icons="wwr_icons" />
         <AppOutNow></AppOutNow>

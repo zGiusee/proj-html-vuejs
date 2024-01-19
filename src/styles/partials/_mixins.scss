@@ -41,3 +41,21 @@
     font-size: 15px;
     margin: 12px 0;
 }
+
+// HEADER LIST STYLE
+
+@mixin ul_header_default_config {
+    list-style-type: none;
+    padding: 0;
+    position: absolute;
+    background-color: $main_grey;
+    display: none;
+}
+
+// HEADER LI LIST STYLE
+@mixin li_style {
+    width: 300px;
+    font-size: 14px;
+    padding: 15px 15px;
+    border-bottom: 1px solid rgb(75, 75, 75);
+}
