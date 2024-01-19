@@ -150,28 +150,34 @@ export default {
             <div class="col-6 h-100">
                 <div class="nav-list-container h-100">
 
+                    <!-- PRIMA CICLATA -->
                     <ul class="link_list">
                         <li v-for="link, index in headerLinks" :key="index" :href="link.linkRef"
                             :class="link.active ? 'active' : ''" class="link_list_li" :id="link.linkName">{{ link.linkName
-                            }}
+                            }} <i v-if="link.linkName == 'Events'" class="bi bi-chevron-down"></i>
+                            <i v-else-if="link.linkName == 'Shop'" class="bi bi-chevron-down"></i>
 
+                            <!-- SECONDA CICLATA CON CON CONDIZIONE -->
                             <ul class="link_section_list" v-if="link.linkSectionDropDownEvents">
                                 <li v-for="section_url, index in link.linkSection" :key="index">
                                     {{ section_url.linkSectionName }}
                                 </li>
                             </ul>
 
+                            <!-- SECONDA CICLATA CON CON CONDIZIONE -->
                             <ul class="link_section_list_right" v-if="link.linkSectionDropDownShop">
-                                <li class="link_section_list_li" v-for="section_url, index in link.linkSection" :key="index"
-                                    :id="section_url.id">
-                                    {{ section_url.linkSectionName }}
+                                <li class="link_section_list_li position-relative"
+                                    v-for="section_url, index in link.linkSection" :key="index" :id="section_url.id">
+                                    {{ section_url.linkSectionName }} <i class="bi bi-chevron-right chevron-position"></i>
 
+                                    <!-- TERZA CICLATA CON CON CONDIZIONE -->
                                     <ul class="link_types_list_shop" v-if="section_url.linkSectionTypesDropDownShop">
                                         <li v-for="types_url, index in section_url.linkSectionTypes" :key="index">
                                             {{ types_url.typesName }}
                                         </li>
                                     </ul>
 
+                                    <!-- TERZA CICLATA CON CON CONDIZIONE -->
                                     <ul class="link_types_list_product" v-if="section_url.linkSectionTypesDropDownProduct">
                                         <li v-for="types_url, index in section_url.linkSectionTypes" :key="index">
                                             {{ types_url.typesName }}
@@ -200,7 +206,27 @@ export default {
 <style lang="scss">
 @use '../styles/generals.scss' as *;
 @use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
 
+.bi-chevron-down::before {
+    font-size: 9px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+}
+
+.bi-chevron-right::before {
+    margin-bottom: 10px;
+    font-size: 9px;
+    vertical-align: middle;
+    position: absolute;
+    bottom: 12px;
+    right: 10px;
+}
+
+
+
+// TERZA CICLATA HOVER PRODOTTI
 #ProductType:hover .link_types_list_product {
     display: block;
 }
@@ -210,7 +236,7 @@ export default {
 }
 
 
-
+// TERZA CICLATA HOVER SHOP
 #ShopPage:hover .link_types_list_shop {
     display: block;
 }
@@ -221,7 +247,7 @@ export default {
 
 
 
-
+// PRIMA CICLATA HOVER SHOP
 #Shop:hover .link_section_list_right {
     display: block;
 }
@@ -230,6 +256,8 @@ export default {
     display: block;
 }
 
+
+// PRIMA CICLATA HOVER EVENTI
 #Events:hover .link_section_list {
     display: block;
 }
@@ -262,6 +290,7 @@ header {
         justify-content: end;
         position: relative;
 
+        // PRIMA LISTA
         .link_list {
             display: flex;
             list-style-type: none;
@@ -294,69 +323,44 @@ header {
 }
 
 
-// SECTION LIST
+// SECTION LIST (SECONDA LISTA NORMALE E DESTRA)
 .link_section_list {
-    list-style-type: none;
-    position: absolute;
+    @include ul_header_default_config;
     top: 102px;
-    padding: 0px;
-    background-color: $main_grey;
-    display: none;
 
     li {
-        width: 370px;
-        padding: 15px 5px;
-        border-bottom: 0.5px solid white;
-
+        @include li_style;
     }
 }
 
 .link_section_list_right {
-    list-style-type: none;
-    position: absolute;
+    @include ul_header_default_config;
     top: 102px;
-    right: 10px;
-    width: 370px;
-    padding: 0px;
-    display: none;
-    background-color: $main_grey;
+    right: 90px;
 
     .link_section_list_li {
-        padding: 15px 5px;
-        border-bottom: 0.5px solid white;
+        @include li_style;
     }
 }
 
-// TYPE LIST
+// TYPE LIST (TERZA LISTA PRODUCT E SHOP)
 .link_types_list_product {
-    list-style-type: none;
-    position: absolute;
+    @include ul_header_default_config;
     top: 0px;
-    right: 370px;
-    padding: 0px;
-    background-color: $main_grey;
-    display: none;
+    right: 300px;
 
     li {
-        width: 370px;
-        padding: 15px 5px;
-        border-bottom: 0.5px solid white;
+        @include li_style;
     }
 }
 
 .link_types_list_shop {
-    list-style-type: none;
-    position: absolute;
-    padding: 0px;
-    top: 53px;
-    right: 370px;
-    display: none;
-    background-color: $main_grey;
+    @include ul_header_default_config;
+    top: 0px;
+    right: 300px;
 
     li {
-        width: 370px;
-        padding: 15px 5px;
-        border-bottom: 0.5px solid white;
+        @include li_style;
     }
 }
 
