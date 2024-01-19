@@ -70,7 +70,7 @@ export default {
 </script>
 <template>
     <div>
-        <JumbotronSlider :slides="jumbotronSlides"></JumbotronSlider>
+        <JumbotronSlider id="jumbotron_slider" :slides="jumbotronSlides"></JumbotronSlider>
         <AppOutNow></AppOutNow>
         <AppCounter />
         <WhoWeAreDue :wwr_gallery="wwr_gallery" :wwr_icons="wwr_icons" />
