@@ -1,7 +1,7 @@
 <script>
 import FooterSlide from './footer_components/FooterSlide.vue';
 export default {
-    components:{
+    components: {
         FooterSlide
     },
     name: 'Footer',
@@ -112,9 +112,9 @@ export default {
                         <!-- Bookings Section -->
                         <h3>BOOKINGS</h3>
                         <p class="info mb-2">
-                            502 New Design Str, 
-                            Melbourne, San Francisco, 
-                            CA 94110, United States Of 
+                            502 New Design Str,
+                            Melbourne, San Francisco,
+                            CA 94110, United States Of
                             America​ Australia
                         </p>
                         <p class="number mb-2">
@@ -161,10 +161,11 @@ export default {
                             NEWSLETTER
                         </h3>
                         <div class="email">
-                            <input type="email" class="form-control" id="email" placeholder="Email">
+                            <input type="email" class="form-control rounded-0 " id="email" placeholder="Email">
                         </div>
                         <div class="text_area">
-                            <textarea class="form-control" id="text_area" rows="3" placeholder="Message"></textarea>
+                            <textarea class="form-control rounded-0 " id="text_area" rows="3"
+                                placeholder="Message"></textarea>
                         </div>
                         <div class="button">
                             <button type="submit">SEND MESSAGE</button>
@@ -186,13 +187,14 @@ export default {
                 </div>
             </div>
         </div>
+
     </footer>
 </template>
 <style lang="scss" scoped>
 @use '../styles/generals.scss' as *;
 @use '../styles/partials/variables' as *;
 
-.top-footer{
+.top-footer {
     width: 100%;
     background-color: black;
     color: white;
@@ -201,84 +203,100 @@ export default {
     align-items: center;
     padding: 0px 20px;
 
-    .info{
+    .info {
         padding-right: 100px;
     }
 
-    p{
+    p {
         color: rgb(165, 165, 165);
         line-height: 25px;
         font-size: 1rem;
         letter-spacing: 2px;
     }
 
-    a{
+    a {
         text-decoration: none;
         color: rgb(165, 165, 165);
-        &:hover{
+
+        &:hover {
             color: #F2870C;
         }
     }
 
-    .light{
+    .light {
         color: white;
         margin-right: 25px;
-        &:hover{
+
+        &:hover {
             color: #F2870C;
         }
     }
 
-    li{
+    li {
         line-height: 35px;
         font-size: 1rem;
         letter-spacing: 2px;
         list-style: none;
     }
 
-    footer{
+    footer {
         overflow: hidden;
     }
 
-    h3{
+    h3 {
         margin-bottom: 1.7rem;
         font-size: 1.7rem;
         font-weight: bold;
     }
 
-    #text_area{
+    #text_area {
         border: 1px solid rgb(57, 57, 57);
         margin-top: 15px;
         padding: 10px;
         margin-bottom: 15px;
+        background-color: black;
     }
 
-    #email{
+    .form-control {
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+
+    #email {
         border: 1px solid rgb(57, 57, 57);
         padding: 10px;
+        background-color: black;
+
+        &:focus {
+            outline: none;
+        }
     }
 
-    textarea::placeholder{
+    textarea::placeholder {
         color: rgb(57, 57, 57);
         padding: 10px;
     }
 
-    input::placeholder{
+    input::placeholder {
         color: rgb(57, 57, 57);
         padding: 10px;
     }
 
-    button{
+    button {
         border: 1px solid #F2870C;
         padding: 10px 60px;
         background-color: transparent;
         color: white;
-        &:hover{
+
+        &:hover {
             background-color: #F2870C;
             transition: 0.3s;
         }
     }
 }
-.bottom-footer{
+
+.bottom-footer {
     width: 100%;
     border-top: 1px solid rgb(57, 57, 57);
     background-color: black;
@@ -286,9 +304,11 @@ export default {
     height: 90px;
     display: flex;
     align-items: center;
-    .copyright{
+
+    .copyright {
         text-align: center;
-        h6{
+
+        h6 {
             color: rgb(165, 165, 165);
             letter-spacing: 1px;
             font-size: 1rem;
