@@ -54,11 +54,10 @@ export default {
         <div class="text-center">
             <!-- IMMAGINE DI BACKGROUND -->
 
-            <transition name="img-transition">
-                <div>
-                    <img :src="`${getImagePath(slides[this.currentImage].img)}`" alt="">
-                </div>
-            </transition>
+            <div>
+                <img :src="`${getImagePath(slides[this.currentImage].img)}`" alt="">
+            </div>
+
             <!-- TITOLO E SOTTOTITOLO -->
             <div class="title-container">
                 <h1>{{ slides[this.currentImage].title }}</h1>
@@ -76,22 +75,13 @@ export default {
 
         <!-- TASTI LATERALI PER CAMBIARE IMMMAGINE -->
         <div class="left" @click="prevImg"><i class="bi bi-chevron-left"></i></div>
-        <div class="right" @click="nextImg"><i class="bi bi-chevron-right"></i></div>
+        <div class="right" @click="nextImg"><i class="bi bi-chevron-left my-rotate"></i></div>
     </div>
 </template>
 <style lang="scss" scoped>
 @use '../../styles/generals.scss' as *;
 @use '../../styles/partials/variables' as *;
 
-.img-transition-enter-active,
-.img-transition-leave-active {
-    transition: opacity 0.5s ease;
-}
-
-.img-transition-enter-from,
-.img-transition-leave-to {
-    opacity: 0;
-}
 
 .slider_wrapper {
     position: relative;
@@ -185,9 +175,17 @@ export default {
         margin-right: 20px;
     }
 
+    .my-rotate {
+        transform: scaleX(-1);
+        -moz-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        -ms-transform: scaleX(-1);
+    }
+
 
     i {
-        display: none;
+        display: block;
+        // display: none;
         background-color: rgba(0, 0, 0, 0.5);
         padding: 8px 12px;
         cursor: pointer;
@@ -197,31 +195,6 @@ export default {
         &:hover {
             background-color: rgba(0, 0, 0, 0.9);
         }
-    }
-}
-
-@keyframes slide_title_text {
-    0% {
-        font-size: 20px;
-        opacity: 0;
-    }
-
-    30% {
-        opacity: 0;
-    }
-
-    45% {
-        opacity: 0.3;
-    }
-
-    80% {
-        opacity: 1;
-        font-size: 100px;
-    }
-
-    100% {
-        opacity: 1;
-        font-size: 100px;
     }
 }
 

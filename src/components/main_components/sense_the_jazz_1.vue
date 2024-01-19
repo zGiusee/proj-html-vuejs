@@ -39,8 +39,7 @@ export default {
 
                         <div class="col-12">
                             <div class="d-gap-2 d-sm-flex justify-content-sm-center">
-                                <button type="button"
-                                    class="btn btn-outline-custom-orange btn-custom px-5 py-2 text-white">READ
+                                <button type="button" class="my-btn">READ
                                     MORE</button>
                             </div>
                         </div>
@@ -89,14 +88,24 @@ export default {
     width: 100%;
 }
 
-.btn-outline-custom-orange {
-    border-color: #F2870C !important;
+.my-btn {
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 15px;
+    border: 1px solid $main_color;
+    padding: 14px 55px;
+    background-color: transparent;
+    transition: all 0.3s;
+
+
 }
 
-.btn-custom {
-    border-radius: 0px !important;
-
+.my-btn:hover {
+    background-color: $main_color;
 }
+
 
 .bg-img {
     background: url('../../assets/img/Video.jpg');
