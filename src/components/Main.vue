@@ -1,12 +1,14 @@
 <script>
 import AppOutNow from './main_components/AppOutNow.vue';
 import WhoWeAreDue from './main_components/WhoWeAreDue.vue';
+import sense_the_jazz_1 from './main_components/sense_the_jazz_1.vue';
 
 export default {
     name: 'Main',
     components: {
         AppOutNow,
-        WhoWeAreDue
+        WhoWeAreDue,
+        sense_the_jazz_1,
     },
     data() {
         return {
@@ -54,6 +56,7 @@ export default {
 </script>
 <template>
     <div>
+        <sense_the_jazz_1></sense_the_jazz_1>
         <AppOutNow></AppOutNow>
         <WhoWeAreDue :wwr_gallery="wwr_gallery" :wwr_icons="wwr_icons" />
     </div>
