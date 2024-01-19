@@ -7,6 +7,8 @@ export default {
     name: 'Footer',
     data() {
         return {
+
+            // Footer Info
             footerList: [
                 {
                     listTitle: 'INFORMATION',
@@ -57,6 +59,8 @@ export default {
                     ]
                 }
             ],
+
+            // Footer Slide for instagram images
             slider: [
                 {
                     image: "../../assets/img/instagram_img1.jpg"
@@ -95,11 +99,17 @@ export default {
 </script>
 <template>
     <footer>
+
+        <!-- Added Props images from component FooterSlide-->
         <FooterSlide :footerSlide="slider"></FooterSlide>
+
+        <!-- Top Footer that has Info Section -->
         <div class="top-footer">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-3">
+
+                        <!-- Bookings Section -->
                         <h3>BOOKINGS</h3>
                         <p class="info mb-2">
                             502 New Design Str, 
@@ -120,6 +130,8 @@ export default {
                             <a href="#"><i class="bi bi-youtube light"></i></a>
                         </div>
                     </div>
+
+                    <!-- Information Section -->
                     <div class="col-3">
                         <ul v-for="(list, index) in footerList" :key="index">
                             <h3>
@@ -130,6 +142,8 @@ export default {
                             </li>
                         </ul>
                     </div>
+
+                    <!-- Support Section -->
                     <div class="col-3">
                         <ul v-for="(list, index) in footerList" :key="index">
                             <h3>
@@ -140,6 +154,8 @@ export default {
                             </li>
                         </ul>
                     </div>
+
+                    <!-- Form Section -->
                     <div class="col-3">
                         <h3>
                             NEWSLETTER
@@ -157,6 +173,8 @@ export default {
                 </div>
             </div>
         </div>
+
+        <!-- Bottom Footer that has Copyright Section -->
         <div class="bottom-footer">
             <div class="container-fluid">
                 <div class="row">

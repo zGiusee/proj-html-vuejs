@@ -1,6 +1,8 @@
 <script>
 export default {
     name: 'FooterSlide',
+
+    // Props that picks Footer images Array
     props: {
         footerSlide: Object,
     },
@@ -10,6 +12,8 @@ export default {
         }
     },
     methods: {
+
+        // This is for import the images 
         getImagePath: function (imgPath) {
             let url = new URL(imgPath, import.meta.url).href;
             return url
