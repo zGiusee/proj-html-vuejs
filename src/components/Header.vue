@@ -323,7 +323,9 @@ header {
 }
 
 
-// SECTION LIST (SECONDA LISTA NORMALE E DESTRA)
+// SECTION LIST (SECONDA CICLATA, LISTA NORMALE E DESTRA[SHOP])
+
+// NORMALE
 .link_section_list {
     @include ul_header_default_config;
     top: 102px;
@@ -333,6 +335,7 @@ header {
     }
 }
 
+// DESTRA[SHOP]
 .link_section_list_right {
     @include ul_header_default_config;
     top: 102px;
@@ -343,7 +346,11 @@ header {
     }
 }
 
-// TYPE LIST (TERZA LISTA PRODUCT E SHOP)
+
+
+// TYPE LIST (TERZA CICLATA, PRODUCT E SHOP)
+
+// PRODUCT
 .link_types_list_product {
     @include ul_header_default_config;
     top: 0px;
@@ -354,6 +361,7 @@ header {
     }
 }
 
+// SHOP
 .link_types_list_shop {
     @include ul_header_default_config;
     top: 0px;
@@ -363,6 +371,10 @@ header {
         @include li_style;
     }
 }
+
+
+
+
 
 
 // SEARCH ICON
