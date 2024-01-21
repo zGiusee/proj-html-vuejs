@@ -93,7 +93,7 @@ export default {
 .main-container {
     font-family: "Oswald", sans-serif;
     width: 100%;
-    padding: 300px 0px;
+    padding: 300px 0px 74px 0px;
 }
 
 .my-btn {
