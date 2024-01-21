@@ -45,6 +45,7 @@ export default {
             ],
 
             wwr_icons: [
+
                 {
                     title: 'youtube',
                     img: '../src/assets/img/image (20).svg',
@@ -53,7 +54,8 @@ export default {
                 {
                     title: 'nota musicale',
                     img: '../src/assets/img/image (16).svg'
-                }
+                },
+
             ],
             jumbotronSlides: [
                 {

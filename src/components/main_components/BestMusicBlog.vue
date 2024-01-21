@@ -57,7 +57,7 @@ export default {
                         <i class="bi bi-chevron-left"></i>
                     </div>
                     <div class="right-arrow" @click="next">
-                        <i class="bi bi-chevron-right"></i>
+                        <i class="bi bi-chevron-left my-rotate"></i>
                     </div>
                 </div>
             </div>

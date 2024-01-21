@@ -24,7 +24,9 @@ export default {
                         <img :src="card.img">
                     </div>
                     <div class="card-title">{{ card.title }}</div>
-                    Stream On : <img v-for="icon, index in wwr_icons" :key="index" :src="icon.img" class="wwr-icons">
+                    Stream On : <i class="bi bi-spotify wwr-icons"></i> <img v-for="icon, index in wwr_icons" :key="index"
+                        :src="icon.img" class="wwr-icons"> <i class="bi bi-cloud-fog2-fill wwr-icons"></i> <i
+                        class="bi bi-compass-fill wwr-icons"></i>
                 </div>
             </div>
         </div>
@@ -52,6 +54,11 @@ export default {
 
 
     .wwr-card {
+        color: rgb(165, 165, 165);
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+
         .card-title {
             @include min_title
         }
@@ -73,8 +80,16 @@ export default {
             filter: brightness(0) invert(1);
             height: 15px;
             margin: 0px 8px;
+            color: white;
+            font-size: 13px;
+
+            &:hover {
+                filter: invert(65%) sepia(72%) saturate(3314%) hue-rotate(357deg) brightness(98%) contrast(93%);
+                color: $main_color;
+            }
 
         }
+
     }
 
 }
