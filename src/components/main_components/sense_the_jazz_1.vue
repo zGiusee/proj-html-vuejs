@@ -1,13 +1,20 @@
 <script>
+import Cards from './Cards.vue';
+
 export default {
     name: "sense_the_jazz_1",
+    components: {
+        Cards,
+    }
 }
 </script>
 
 <template>
-    <div class="bg-black">
+    <div class="bg-black position-relative">
+        <Cards></Cards>
+
         <div class="main-container ">
-            <div class="bg-black ">
+            <div class="bg-black">
                 <div class="px-4 py-5  text-center text-white">
                     <div class="row">
 
@@ -86,6 +93,7 @@ export default {
 .main-container {
     font-family: "Oswald", sans-serif;
     width: 100%;
+    padding: 300px 0px;
 }
 
 .my-btn {
