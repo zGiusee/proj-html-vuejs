@@ -56,8 +56,8 @@ export default {
                     <div class="left-arrow" @click="prev">
                         <i class="bi bi-chevron-left"></i>
                     </div>
-                    <div class="right-arrow" @click="next">
-                        <i class="bi bi-chevron-left my-rotate"></i>
+                    <div class="right-arrow my-rotate" @click="next">
+                        <i class="bi bi-chevron-left"></i>
                     </div>
                 </div>
             </div>
@@ -172,6 +172,12 @@ export default {
         }
     }
 
+    .my-rotate {
+        transform: scaleX(-1);
+        -moz-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        -ms-transform: scaleX(-1);
+    }
 
 }
 </style>
