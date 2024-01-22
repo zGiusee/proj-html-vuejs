@@ -34,7 +34,8 @@ Owner progetto : Giuseppe Belforte; <br>
 - Music blog section: Melissa;<br>
 - Mini img slider: Marco;<br>
 
-#### FOOTER<br>
+##### FOOTER<br>
 - Link list + contact box section: Marco;<br>
 - Copyrights + arrow redirect: Marco;<br>
 
+<img src='/src/assets/layout_con_suddivisione_sezioni.png'>
