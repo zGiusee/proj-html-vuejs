@@ -38,7 +38,7 @@ export default {
             <div class="slider-cont">
                 <!-- SLIDER BLOG -->
                 <div class="slider">
-                    <carousel ref="carousel" :items-to-show="3">
+                    <carousel ref="carousel" :items-to-show="3" :wrap-around="true">
                         <slide v-for="slide in bmb_cards" :key="slide">
                             <div class="bmb-card my-3">
                                 <div class="card-image">
