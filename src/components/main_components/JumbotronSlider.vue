@@ -206,8 +206,7 @@ export default {
 
 
     .bi-chevron-left {
-        display: block;
-        // display: none;
+        display: none;
         background-color: rgba(0, 0, 0, 0.5);
         padding: 8px 12px;
         cursor: pointer;
