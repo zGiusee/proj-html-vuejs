@@ -1,29 +1,40 @@
-### PROGETTO: 'Instrumental Rock'<br>
+## PROGETTO: 'Instrumental Rock'<br>
 #### Team members:<br>
-Giuseppe Belforte;<br>
-Marco Benfante;<br>
-Melissa Musumeci;<br>
-Alessandro Greco;<br>
-Antonio Stasullo;<br>
+- Giuseppe Belforte;<br>
+- Marco Benfante;<br>
+- Melissa Musumeci;<br>
+- Alessandro Greco;<br>
+- Antonio Stasullo;<br>
 
 Owner progetto : Giuseppe Belforte; <br>
 
-Suddivisione delle sezioni con assegnazione dei lavori;<br>
+###### Framework utilizzati <br>
+- Vite
+- Vue
 
-HEADER<br>
-Header (fixed): Giuseppe;<br>
+###### Pacchetti utilizzati <br>
+- Bootstrap
+- Bootstrap icon
+- Vue3 Carousel
+- Sass
+- Vue3 Auto Counter
 
-MAIN<br>
-Jumbotron slider: Giuseppe;<br>
-'Who we are sense the jazz 1' section: Alessandro;<br>
-New music video player section: Alessandro;<br>
-'Who we are sense the jazz 2' section: Melissa;<br>
-New album banner section: Antonio;<br>
-Our Achievements section: Antonio;<br>
-Music blog section: Melissa;<br>
-Mini img slider: Marco;<br>
+#### Suddivisione delle sezioni con assegnazione dei lavori;<br>
 
-FOOTER<br>
-Link list + contact box section: Marco;<br>
-Copyrights + arrow redirect: Marco;<br>
+##### HEADER<br>
+- Header (fixed): Giuseppe;<br>
+
+##### MAIN<br>
+- Jumbotron slider: Giuseppe;<br>
+- 'Who we are sense the jazz 1' section: Alessandro;<br>
+- New music video player section: Alessandro;<br>
+- 'Who we are sense the jazz 2' section: Melissa;<br>
+- New album banner section: Antonio;<br>
+- Our Achievements section: Antonio;<br>
+- Music blog section: Melissa;<br>
+- Mini img slider: Marco;<br>
+
+#### FOOTER<br>
+- Link list + contact box section: Marco;<br>
+- Copyrights + arrow redirect: Marco;<br>
 
