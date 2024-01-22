@@ -11,7 +11,9 @@ export default {
 
 <template>
     <div class="bg-black position-relative">
-        <Cards></Cards>
+        <div class="d-flex justify-content-center">
+            <Cards></Cards>
+        </div>
 
         <div class="main-container ">
             <div class="bg-black">
@@ -44,7 +46,7 @@ export default {
 
                         </div>
 
-                        <div class="col-12">
+                        <div class="col-12 pb-5">
                             <div class="d-gap-2 d-sm-flex justify-content-sm-center">
                                 <button type="button" class="my-btn">READ
                                     MORE</button>
@@ -122,7 +124,7 @@ export default {
 }
 
 .section-size {
-    height: 500px;
+    height: 670px;
     width: 100%;
 }
 
@@ -133,6 +135,6 @@ export default {
 }
 
 .mt-custom {
-    margin-top: 120px !important;
+    margin-top: 230px !important;
 }
 </style>

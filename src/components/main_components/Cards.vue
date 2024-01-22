@@ -64,7 +64,6 @@ export default {
 
 .card-position {
     position: absolute;
-    left: 270px;
     top: -170px;
 }
 
